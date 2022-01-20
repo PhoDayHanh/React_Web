@@ -1,5 +1,6 @@
-import React, {Component} from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import React, { Component } from "react";
+import Header from "./HeaderComponent";
+import Footer from "./FooterComponent";
 import MenuMini2 from './MenuMini2';
 import DishDetailMini from './DishDetailMini';
 import { DISHES } from '../shared/dishes';
@@ -25,20 +26,20 @@ class Main extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar dark color="primary">
+           
+        
+                <div>
+                    <Header/>
                     <div className="container">
-                        <NavbarBrand href="/">Resitorante Con Fusion</NavbarBrand>
+                        <div className="row">
+                            <MenuMini2 dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
+                        </div>
+                        <DishDetailMini dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
+                        <Footer/>
                     </div>
-                </Navbar>
-
-                <div className="container">
-                    <div className="row">
-                        <MenuMini2 dishes={this.state.dishes} onClick={(dishId) => this.onDishSelect(dishId)} />
-                    </div>
-                    <DishDetailMini dish={this.state.dishes.filter((dish) => dish.id === this.state.selectedDish)[0]} />
                 </div>
-            </div>
+            
+
 
 
 
