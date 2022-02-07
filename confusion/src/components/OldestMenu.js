@@ -3,7 +3,7 @@ import { Media } from "reactstrap";
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from "reactstrap";
 
 
-class Menu extends Component {
+class OldestMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -76,4 +76,4 @@ class Menu extends Component {
 
 }
 
-export default Menu;
+export default OldestMenu;
